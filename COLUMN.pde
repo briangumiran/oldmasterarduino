@@ -179,7 +179,11 @@ char *concatColumnData(char *columnData, char *tempData){
 Separate piezo data from colum data
 parses tempdata to get the last node
 and puts it in a separate string
+
+march 2016 update: includes thermistor temp in the parsing
+
 */
+
 void getPiezoData(char *scratchdata, char* piezodata){
   int piezo_present = 0;
   int i = 0;
@@ -212,10 +216,10 @@ void getPiezoData(char *scratchdata, char* piezodata){
          
          //clean piezo sensor data, remove excess data
          for (k=0,l=0;l  <= piezolen; l++,k++){
-             if((k+1) % 3 == 0) k++;
+             if(((k+1) % 3 == 0) && (k < 9)) k++;
              piezodata[l] = piezodata[k];
          }
-           piezodata[8] = '\0';
+           piezodata[12] = '\0';
 //           Serial.println("PIEZODATA");
 //            Serial.println(piezodata);
 //            Serial.println();
@@ -244,6 +248,7 @@ void getPiezoData(char *scratchdata, char* piezodata){
 //            Serial.println(tempdata);
 //            Serial.println();    
         }
+        
         
     else{
       Serial.println("Piezo Node Disconnected");

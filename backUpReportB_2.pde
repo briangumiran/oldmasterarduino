@@ -5,7 +5,7 @@
 #include <SD.h>
 #include <EEPROM.h>
 #include <SPI.h>
-#define BUILDNUMBER "110415"
+#define BUILDNUMBER "030416"
 // 110415 - piezo code integration
 // 091714 - implemented SDcard with power switch and level shifter
 // 082214 - Bug fix - code (gets stuck in infinite while-loop when attempting to toggle GSM when power is low. Added SD/voltage monitoring shield. Added status report message.
@@ -70,7 +70,7 @@ int RETRYval = 1;
 
 //piezo global variables
 //ALWAYS CHANGE every node
-char PIEZOID[3] = "28"; // set piezo ID larger than any other node, hex
+char PIEZOID[3] = "29"; // set piezo ID larger than any other node, hex
 
 //File myFile;
 char sleep = 0;
