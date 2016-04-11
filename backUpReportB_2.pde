@@ -6,6 +6,7 @@
 #include <EEPROM.h>
 #include <SPI.h>
 #define BUILDNUMBER "030416"
+// 030416 - piezo thermisor
 // 110415 - piezo code integration
 // 091714 - implemented SDcard with power switch and level shifter
 // 082214 - Bug fix - code (gets stuck in infinite while-loop when attempting to toggle GSM when power is low. Added SD/voltage monitoring shield. Added status report message.

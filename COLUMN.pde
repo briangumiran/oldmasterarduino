@@ -219,7 +219,7 @@ void getPiezoData(char *scratchdata, char* piezodata){
              if(((k+1) % 3 == 0) && (k < 9)) k++;
              piezodata[l] = piezodata[k];
          }
-           piezodata[12] = '\0';
+           piezodata[13] = '\0';
 //           Serial.println("PIEZODATA");
 //            Serial.println(piezodata);
 //            Serial.println();
