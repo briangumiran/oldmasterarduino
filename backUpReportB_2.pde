@@ -63,15 +63,15 @@ int sendFlag=0; //0 kapag nagsesend, 1 kapag hindi
 
 
 int REPORTINTERVAL = 30;
-char MASTERNAME[5] = "OSLT";
-char PIEZONAME[7] = "OSLTPZ";
+char MASTERNAME[5] = "SINB";
+char PIEZONAME[7] = "SINBPZ";
 char SERVERNUM[12] = "09176321023";
-char MOBILENUM[12] = "09162408795"; 
+char MOBILENUM[12] = "09176321023"; 
 int RETRYval = 1; 
 
 //piezo global variables
 //ALWAYS CHANGE every node
-char PIEZOID[3] = "29"; // set piezo ID larger than any other node, hex
+char PIEZOID[3] = "1E"; // set piezo ID larger than any other node, HEX
 
 //File myFile;
 char sleep = 0;
@@ -507,19 +507,19 @@ void loop(){
   Serial.println("\nSending voltage status:");
   Serial.println(msgToSend);
 
-  if (sdChk==1){
-    globalTime = GetTimestampTag(Timestamps, logfile);
-    String dateToday = logfile;
-    String msgToLog= msgToSend;
-    logData(dateToday + ".txt", msgToLog + "\r\n");
-  }
-
-  if ((SendMsg(SERVERNUM, msgToSend, buffer)) == 1){    
-    if (sdChk==1){
-      chckOF= checkOutboxFiles();
-      storeData(msgToSend,chckOF);
-    }
-  }
+//  if (sdChk==1){
+//    globalTime = GetTimestampTag(Timestamps, logfile);
+//    String dateToday = logfile;
+//    String msgToLog= msgToSend;
+//    logData(dateToday + ".txt", msgToLog + "\r\n");
+//  }
+//
+//  if ((SendMsg(SERVERNUM, msgToSend, buffer)) == 1){    
+//    if (sdChk==1){
+//      chckOF= checkOutboxFiles();
+//      storeData(msgToSend,chckOF);
+//    }
+//  }
 
   delay(500);
 
